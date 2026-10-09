@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f3">
+  <meta name="description" content="Learn something new with bite-sized lessons and interactive quizzes.">
+  <title>Learnwell — Your learning space</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="brand-home" aria-label="Learnwell home">
+      <span class="brand-mark" aria-hidden="true">l.</span>
+      <span>learn<span class="brand-light">well</span></span>
+    </a>
+    <nav class="top-links" aria-label="Main navigation">
+      <a href="#subjects" id="explore-link">Explore</a>
+      <button class="progress-nav" id="progress-nav" type="button"><span aria-hidden="true">◷</span> My progress <span class="progress-pill" id="nav-progress">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home-view">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-mark">✳</span> YOUR SPACE TO GROW</span>
+          <h1>Curiosity looks<br>good on <span>you.</span></h1>
+          <p class="hero-description">Big subjects, broken into little wins. Explore a new idea, learn at your own pace, and keep a record of how far you've come.</p>
+          <a class="button button-primary hero-button" href="#subjects">Find your next lesson <span aria-hidden="true">→</span></a>
+          <div class="hero-footnote"><span class="footnote-dot"></span> Small lessons. Your own pace. No pressure.</div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="sun-disc"></div>
+          <div class="plant plant-one"><i></i><i></i><i></i><i></i></div>
+          <div class="plant plant-two"><i></i><i></i><i></i></div>
+          <div class="book book-back"></div>
+          <div class="book book-front"><span>stay<br>curious<span class="book-period">.</span></span><i></i></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span class="sparkle sparkle-one">✳</span><span class="sparkle sparkle-two">✦</span>
+        </div>
+      </section>
+
+      <section class="progress-banner" aria-label="Your learning progress">
+        <div class="progress-banner-mark" aria-hidden="true">↗</div>
+        <div class="progress-banner-copy"><strong id="home-progress-title">Every expert started somewhere.</strong><span id="home-progress-copy">Choose a lesson, learn something new, and start your own learning streak.</span></div>
+        <div class="progress-banner-count"><strong id="home-completed">0</strong><span>lessons completed</span></div>
+        <div class="banner-divider"></div>
+        <div class="progress-banner-count"><strong id="home-available">9</strong><span>little adventures</span></div>
+      </section>
+
+      <section class="subjects-section" id="subjects">
+        <div class="section-heading">
+          <div><span class="eyebrow"><span class="eyebrow-mark">✳</span> PICK UP SOMETHING NEW</span><h2>Where shall we begin?</h2><p>Choose a shelf. Follow what makes you curious.</p></div>
+          <span id="subject-count" class="shelf-count">3 LEARNING SHELVES</span>
+        </div>
+        <div id="subject-grid" class="subject-grid"><div class="loading-card">Finding something good to learn...</div></div>
+      </section>
+    </section>
+
+    <p id="storage-notice" class="storage-notice hidden" role="status"></p>
+
+    <section id="lessons-view" class="content-view hidden">
+      <button class="back-link" id="lessons-back" type="button"><span aria-hidden="true">←</span> All subjects</button>
+      <div id="lessons-heading" class="lessons-heading"></div>
+      <div class="section-heading lessons-section-heading">
+        <div><span class="eyebrow"><span class="eyebrow-mark">✳</span> YOUR LEARNING PATH</span><h2>Little steps, big ideas.</h2><p>Pick a lesson and settle in. You can do this.</p></div>
+      </div>
+      <div id="lesson-grid" class="lesson-grid"></div>
+    </section>
+
+    <section id="lesson-view" class="content-view hidden">
+      <button class="back-link" id="lesson-back" type="button"><span aria-hidden="true">←</span> Back to lessons</button>
+      <div id="lesson-content"></div>
+    </section>
+
+    <section id="progress-view" class="content-view hidden">
+      <button class="back-link" id="progress-back" type="button"><span aria-hidden="true">←</span> Back to learning</button>
+      <div class="progress-page-heading"><span class="eyebrow"><span class="eyebrow-mark">✳</span> LOOK HOW FAR YOU'VE COME</span><h1>Your learning <span>journal.</span></h1><p>Every lesson you finish is a little promise you kept to yourself.</p></div>
+      <div id="progress-content"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#" id="footer-home">learn<span>well</span></a><span>A little learning goes a long way.</span><span>Made for curious minds.</span></footer>
+</body>
+</html>
