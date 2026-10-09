@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Practice interview questions and get instant, actionable feedback.">
+  <title>Interview Coach — Practice with purpose</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Interview Coach home">
+      <span class="brand-mark" aria-hidden="true">i<span>.</span></span>
+      <span>interview<span class="brand-light">coach</span></span>
+    </a>
+    <div class="topbar-note"><span class="online-dot"></span> Your personal practice room</div>
+  </header>
+
+  <main>
+    <section id="welcome-screen" class="welcome-screen">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT OPPORTUNITY STARTS HERE</span>
+          <h1>Walk into your<br>next interview <span>ready.</span></h1>
+          <p class="hero-description">A little practice goes a long way. Work through thoughtful questions, shape your answers, and find your confidence before the big day.</p>
+          <div class="trust-row">
+            <div class="avatar-stack" aria-hidden="true"><span>J</span><span>M</span><span>A</span></div>
+            <span>A calmer kind of interview prep</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="A preview of your interview practice session">
+          <div class="card-topline"><span class="mini-dot"></span> YOUR PRACTICE SPACE <span class="card-top-right">01 / 03</span></div>
+          <div class="preview-question">“Tell me about a challenge you overcame.”</div>
+          <div class="preview-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="preview-labels"><span>Take your time</span><span>You've got this</span></div>
+          <div class="preview-feedback"><span class="preview-check">✓</span><span><strong>Thoughtful answers take practice.</strong><br>Start with what you know.</span></div>
+          <span class="card-decoration card-decoration-one"></span>
+          <span class="card-decoration card-decoration-two"></span>
+        </div>
+      </div>
+
+      <div class="setup-card">
+        <div class="setup-heading">
+          <div><span class="section-kicker">LET'S GET STARTED</span><h2>Choose your practice</h2></div>
+          <span class="question-count"><span class="count-icon">✳</span> 5 questions per session</span>
+        </div>
+        <div class="track-options" role="radiogroup" aria-label="Choose an interview question track">
+          <label class="track-option selected">
+            <input type="radio" name="track" value="behavioral" checked>
+            <span class="track-icon behavioral-icon" aria-hidden="true">✳</span>
+            <span class="track-copy"><strong>Behavioral</strong><small>Stories that show who you are</small></span>
+            <span class="radio-indicator" aria-hidden="true"></span>
+          </label>
+          <label class="track-option">
+            <input type="radio" name="track" value="java">
+            <span class="track-icon java-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="track-copy"><strong>Java technical</strong><small>Show what you know</small></span>
+            <span class="radio-indicator" aria-hidden="true"></span>
+          </label>
+          <label class="track-option">
+            <input type="radio" name="track" value="mixed">
+            <span class="track-icon mixed-icon" aria-hidden="true">✦</span>
+            <span class="track-copy"><strong>A little of both</strong><small>Mix it up and stay sharp</small></span>
+            <span class="radio-indicator" aria-hidden="true"></span>
+          </label>
+        </div>
+        <button id="start-button" class="button button-primary button-start" type="button">
+          Start a practice session <span aria-hidden="true">→</span>
+        </button>
+        <div id="setup-error" class="form-error" role="alert"></div>
+        <p class="privacy-note"><span aria-hidden="true">⌑</span> Your answers stay in this session. No account needed.</p>
+      </div>
+    </section>
+
+    <section id="practice-screen" class="practice-screen hidden" aria-live="polite">
+      <div class="practice-header">
+        <button id="back-button" class="back-button" type="button"><span aria-hidden="true">←</span> End session</button>
+        <span id="practice-track-label" class="practice-track-label"></span>
+      </div>
+      <div class="practice-layout">
+        <section class="question-panel">
+          <div class="session-progress">
+            <span class="section-kicker">YOUR PRACTICE SESSION</span>
+            <span id="progress-label" class="progress-label"></span>
+          </div>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+          <div id="question-category" class="question-category"></div>
+          <h1 id="question-prompt" class="question-prompt"></h1>
+          <div class="coach-hint"><span class="hint-icon" aria-hidden="true">✳</span><div><strong>A thought to keep in mind</strong><p id="question-focus"></p></div></div>
+          <form id="answer-form" class="answer-form">
+            <label for="answer-input" class="answer-label">YOUR ANSWER <span>Take a breath. There's no rush.</span></label>
+            <textarea id="answer-input" name="answer" rows="7" maxlength="10000" placeholder="Start wherever feels natural. You can always refine your answer..." required></textarea>
+            <div class="answer-meta"><span>Tip: aim for a few thoughtful sentences</span><span id="word-count">0 words</span></div>
+            <div id="form-error" class="form-error" role="alert"></div>
+            <button id="submit-button" class="button button-primary submit-button" type="submit">Get my feedback <span aria-hidden="true">→</span></button>
+          </form>
+          <section id="feedback-panel" class="feedback-panel hidden" aria-live="polite">
+            <div class="feedback-heading"><div><span class="section-kicker">A MOMENT TO REFLECT</span><h2>Your answer check-in</h2></div><div id="feedback-score" class="feedback-score"></div></div>
+            <ul id="feedback-list" class="feedback-list"></ul>
+            <p class="feedback-disclaimer">A gentle checklist, not a judgment. Your experience is more than a score.</p>
+            <button id="next-button" class="button button-primary submit-button" type="button">Next question <span aria-hidden="true">→</span></button>
+          </section>
+        </section>
+        <aside class="side-panel">
+          <div class="side-card session-card">
+            <span class="side-icon" aria-hidden="true">✳</span>
+            <span class="section-kicker">A NOTE FROM YOUR COACH</span>
+            <h2>There's no perfect answer.</h2>
+            <p>The best answers sound like you. Be specific, be honest, and give yourself room to think.</p>
+          </div>
+          <div class="side-card score-card">
+            <span class="section-kicker">SESSION CHECK-IN</span>
+            <div class="score-numbers"><strong id="answered-count">0</strong><span>of 5 answered</span></div>
+            <div class="mini-progress"><div id="answered-fill" class="mini-progress-fill"></div></div>
+            <p>Your progress is saved until you leave this session.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="summary-screen" class="summary-screen hidden" aria-live="polite">
+      <div class="summary-card">
+        <span class="summary-sparkle" aria-hidden="true">✳</span>
+        <span class="eyebrow"><span class="eyebrow-line"></span> SESSION COMPLETE</span>
+        <h1>You showed up.<br><span>That matters.</span></h1>
+        <p id="summary-copy"></p>
+        <div id="summary-score" class="summary-score"></div>
+        <p class="summary-note">Keep your momentum going. Every answer gets easier with practice.</p>
+        <button id="restart-button" class="button button-primary button-start" type="button">Practice another round <span aria-hidden="true">→</span></button>
+        <button id="home-button" class="text-button" type="button">Back to home</button>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>interview<span class="brand-light">coach</span></span><span>Made for the person you're becoming.</span></footer>
+</body>
+</html>
