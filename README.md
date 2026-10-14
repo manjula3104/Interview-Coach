@@ -5,7 +5,7 @@ HTML, CSS, and JavaScript; a Java 17+ backend serves the site and provides REST
 endpoints for questions and answer feedback. It has no third-party Java
 dependencies, account setup, database, or external AI service.
 
-
+## Run on Windows
 
 From the project folder, double-click `run.bat`, or run it from PowerShell:
 
